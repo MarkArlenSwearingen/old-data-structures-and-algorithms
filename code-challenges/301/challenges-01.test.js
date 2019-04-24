@@ -3,7 +3,9 @@
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 1
 
+
 Write a function named greeting that takes in a string and returns the string in all uppercase letters.
+
 
 Then, write a function named speaker that takes in a string and a callback function. The speaker function should return the string in all uppercase letters only by invoking the callback.
 ------------------------------------------------------------------------------------------------ */
@@ -37,13 +39,11 @@ const addNumbers = (num, arr, times, callback) => {
   return arr;
 };
 
+
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
-
 Write a function named removeOne that takes in a number and an array. If the number divided by three has a remainder of two, pop one element off of the array.
-
 Hint: you may want to look into the modulo operation.
-
 Then, write a function named removeElements that takes in an array and a callback. This function should use a for loop to iterate over the array and invoke the callback once for each element in the array.
 
 Return the modified array.
@@ -69,8 +69,10 @@ Write a function named removeWithForEach that produces the same output as challe
 ------------------------------------------------------------------------------------------------ */
 
 const removeWithForEach = (arr, callback) => {
-  arr.forEach(element => {
-    callback(element,arr);
+
+  arr.forEach(function (element){
+    callback(element, arr);
+
   });
   return arr;
 };
@@ -79,18 +81,20 @@ const removeWithForEach = (arr, callback) => {
 CHALLENGE 5
 
 Write a function named removeWithAnon that produces the same output as challenges 3 and 4.
-
 This function should use forEach again, but rather than taking in a callback as an argument, define an anonymous function as the argument to forEach.
 
 This anonymous function should accept up to three arguments: the element, the index, and the array.
 ------------------------------------------------------------------------------------------------ */
 
 const removeWithAnon = (arr) => {
-  arr.forEach(function(element) {
-    if (element % 3 === 2) {
+
+  arr.forEach((element) => {
+    if(element % 3 === 2) {
       arr.pop();
     }
-  });
+  }
+  );
+
   return arr;
 };
 
@@ -114,7 +118,9 @@ This function should use forEach to populate your grocery list based on the stor
 const createList = (availableItems) => {
   let list = [];
   availableItems.forEach(element => {
-    if(element.available === true){
+
+    if(element.available === true) {
+
       list.push(element.name);
     }
   });
@@ -139,14 +145,6 @@ const fizzbuzz = (arr) => {
   // Solution code here...
 };
 
-/* ------------------------------------------------------------------------------------------------
-TESTS
-
-All the code below will verify that your functions are working to solve the challenges.
-
-DO NOT CHANGE any of the below code.
-
-Run your tests from the console: jest challenges-01.test.js
 
 ------------------------------------------------------------------------------------------------ */
 
