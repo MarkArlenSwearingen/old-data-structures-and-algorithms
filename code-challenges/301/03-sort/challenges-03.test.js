@@ -6,10 +6,10 @@ CHALLENGE 1
 Write a function named sortBackwards that takes in an array of numbers and returns the same array, with the numbers sorted, highest to smallest.
 ------------------------------------------------------------------------------------------------ */
 
-const sortBackwards = (arr) => {
-  // Solution code here...
-};
-
+const sortBackwards = (arr) =>
+  arr.sort((a, b) => {
+    return b - a;});
+    
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
 
