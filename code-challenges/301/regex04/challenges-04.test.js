@@ -31,10 +31,33 @@ CHALLENGE 3
 Write a function named citiesAtoJ that takes in an array of city names and uses a regular expression pattern to return a new array containing any cities that begin with the letters A through J, inclusive.
 ------------------------------------------------------------------------------------------------ */
 
+// const citiesAtoJ = (arr) => {
+//   let regex =  /^[A-J]\w*/;
+//   // let output = '';
+//   arr.forEach(function(element) {
+//     if (regex.test(element)) {
+//       return regex.exec(element);
+//     }
+//   });
+// };
+
 const citiesAtoJ = (arr) => {
-  // Solution code here...
+  let regex =  /^[A-J]\w*/;
+  let array = [];
+  arr.forEach(function(element) {
+    if (regex.test(element)) {
+      array.push(element);
+    }
+  }); return array;
 };
 
+// var array1 = ['a', 'b', 'c'];
+// array1.forEach(function(element) {
+//   console.log(element);
+// });
+// expected output: "a"
+// expected output: "b"
+// expected output: "c"
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
@@ -56,7 +79,10 @@ The expected output of "Hello, and have a wonderful day!" is ["and ", "have ", "
 ------------------------------------------------------------------------------------------------ */
 
 const noPunctuation = str => {
-  // Solution code here...
+  let regex = /\w*/;
+  if (str.search(regex)){
+    return str.match(regex);
+  }
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -115,7 +141,7 @@ describe('Testing challenge 2', () => {
 });
 
 describe('Testing challenge 3', () => {
-  // let cities = ['Cleveland', 'San Diego', 'Birmingham', 'Seattle', 'Miami', 'New York City', 'Omaha', 'Portland', 'Austin', 'Boston', 'Newport Beach', 'Hoboken'];
+  let cities = ['Cleveland', 'San Diego', 'Birmingham', 'Seattle', 'Miami', 'New York City', 'Omaha', 'Portland', 'Austin', 'Boston', 'Newport Beach', 'Hoboken'];
 
   test('It should return the cities whose names begin with the letters A through J', () => {
     expect(citiesAtoJ(cities)).toContain('Cleveland', 'Birmingham', 'Austin', 'Boston', 'Hoboken');
