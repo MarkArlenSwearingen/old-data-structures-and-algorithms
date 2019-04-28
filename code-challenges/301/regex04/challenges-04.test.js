@@ -50,8 +50,14 @@ Do not use the vertical bar (pipe) in your pattern.
 ------------------------------------------------------------------------------------------------ */
 
 const matchMonth = (input) => {
-  // Solution code here...
+  let regex = /^[Oo](ct)[\so]\w\w\w/g;
+  let month = input.match(regex);
+  return month;
 };
+
+//\b[Oo](ct)(ober)$  
+//evaluate ! logic.  the border or ending is nothing other than border or (ober)$  can't be the remaing characters.
+// can I use a double negative for advantage.  not excluded?
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5
