@@ -22,7 +22,8 @@ Return an array containing all the matches.
 ------------------------------------------------------------------------------------------------ */
 
 const isCapitalized = (str) => {
-  // Solution code here...
+  let regex = /[A-Z]\w*/g;
+  return str.match(regex);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -31,9 +32,14 @@ Write a function named citiesAtoJ that takes in an array of city names and uses 
 ------------------------------------------------------------------------------------------------ */
 
 const citiesAtoJ = (arr) => {
-  // Solution code here...
+  let regex =  /^[A-J]\w*/;
+  let array = [];
+  arr.forEach(function(element) {
+    if (regex.test(element)) {
+      array.push(element);
+    }
+  }); return array;
 };
-
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
@@ -44,8 +50,14 @@ Do not use the vertical bar (pipe) in your pattern.
 ------------------------------------------------------------------------------------------------ */
 
 const matchMonth = (input) => {
-  // Solution code here...
+  let regex = /^[Oo](ct)[\so]\w\w\w/g;
+  let month = input.match(regex);
+  return month;
 };
+
+//\b[Oo](ct)(ober)$  
+//evaluate ! logic.  the border or ending is nothing other than border or (ober)$  can't be the remaing characters.
+// can I use a double negative for advantage.  not excluded?
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5
@@ -55,7 +67,10 @@ The expected output of "Hello, and have a wonderful day!" is ["and ", "have ", "
 ------------------------------------------------------------------------------------------------ */
 
 const noPunctuation = str => {
-  // Solution code here...
+  let regex = /\w+\s/g;
+  if (regex.test(str)){
+    return str.match(regex);
+  }
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -67,7 +82,9 @@ For example, 'Welcome to Code 301!' will return 'W_lc_m_ t_ C_d_ 301!'.
 ------------------------------------------------------------------------------------------------ */
 
 let hangman = (str) => {
-  // Solution code here...
+  let regex = /[aeiou]/g;
+  let replacedString = str.replace(regex,'_');
+  return replacedString;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -80,7 +97,8 @@ Hint: All of these words end with the letters "ells".
 const seashells = 'She sells seashells by the seashore. The shells she sells are surely seashells. So if she sells shells on the seashore, I\'m sure she sells seashore shells.';
 
 const findShells = (str) => {
-  // Solution code here...
+  let regex = /\w+(ells)/g;
+  return str.match(regex);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -114,7 +132,7 @@ describe('Testing challenge 2', () => {
 });
 
 describe('Testing challenge 3', () => {
-  // let cities = ['Cleveland', 'San Diego', 'Birmingham', 'Seattle', 'Miami', 'New York City', 'Omaha', 'Portland', 'Austin', 'Boston', 'Newport Beach', 'Hoboken'];
+  let cities = ['Cleveland', 'San Diego', 'Birmingham', 'Seattle', 'Miami', 'New York City', 'Omaha', 'Portland', 'Austin', 'Boston', 'Newport Beach', 'Hoboken'];
 
   test('It should return the cities whose names begin with the letters A through J', () => {
     expect(citiesAtoJ(cities)).toContain('Cleveland', 'Birmingham', 'Austin', 'Boston', 'Hoboken');
