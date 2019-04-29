@@ -56,7 +56,8 @@ const matchMonth = (input) => {
 };
 
 //\b[Oo](ct)(ober)$  
-//evaluate ! logic.  the border or ending is nothing other than border or (ober)$  can't be the remaing characters.
+//evaluate ! logic.  the border or ending is nothing other than border\b or ending with(ober)$
+//  can be the remaing characters.
 // can I use a double negative for advantage.  not excluded?
 
 /* ------------------------------------------------------------------------------------------------
