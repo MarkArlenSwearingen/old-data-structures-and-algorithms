@@ -11,10 +11,33 @@ For example, if the input is 'Welcome', the output will be:
 
 const howMuchPencil = (str) => {
   let result = [];
-  // Solution code here...
+  for(let i = 0; i <str.length; i++){
+    let str1 = str.slice((str.length -i) * -1);
+    result.push(str1);
+  }
   return result;
 };
 
+// let str = 'Welcome';
+// let output = [];
+
+// output.push(str);
+//   output.forEach((element) => {
+//       element = element.slice(1);
+//       output = [element];
+ 
+//   }); 
+
+//ToDO the array is only being processed once because there is only one string in the array.  
+// The solution needs to iterate over the string/lenght so I am in a catch 22 in my design.
+// in order to create ['W', 'e', 'l' ...] a for each loop needs to itereate over the string length.
+
+   // let len = element.length;
+    // console.log(len);
+    // let str1 = [str].slice((len  * -1) + 1);
+    //  console.log(str1);
+    // output.push(str.slice((len  * -1) + 1));
+    // console.log( output);
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
 Write a function name wordsToCharList that, given a string as input, returns a new array where every element is a character of the input string.
