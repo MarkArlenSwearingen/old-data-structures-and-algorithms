@@ -67,7 +67,7 @@ let characters = [
 
 const getHouses = (arr) => {
   let houses = [];
-  characters.forEach((element) => {
+  arr.forEach((element) => {
     let values = (Object.values(element));
     houses.push(values[3]);
   });
@@ -84,12 +84,20 @@ hasChildrenValues(characters, 'Cersei') will return true
 hasChildrenValues(characters, 'Eddard') will return false
 ------------------------------------------------------------------------------------------------ */
 
-const hasChildrenValues = (arr, character) => {
-  arr.forEach(function(element) {
-    let values = (Object[character].values(element));
-    return values[2];
+const hasChildrenValues = (function(arr, character) {
+  let children = [];
+  arr.forEach((element) => {
+    let values = (Object.values(element));
+    if (values[0] === character){
+      children.push(values[0], values[2]);
+    }
   });
-};
+  if(children[1].length === 0){
+    return false;
+  }else{
+    return true;
+  }
+});
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
