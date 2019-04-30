@@ -67,9 +67,13 @@ let characters = [
 
 const getHouses = (arr) => {
   let houses = [];
-  // Solution code here...
+  arr.forEach((element) => {
+    let values = (Object.values(element));
+    houses.push(values[3]);
+  });
   return houses;
 };
+
 
 /*------------------------------------------------------------------------------------------------
 CHALLENGE 3
@@ -80,9 +84,20 @@ hasChildrenValues(characters, 'Cersei') will return true
 hasChildrenValues(characters, 'Eddard') will return false
 ------------------------------------------------------------------------------------------------ */
 
-const hasChildrenValues = (arr, character) => {
-  // Solution code here...
-};
+const hasChildrenValues = (function(arr, character) {
+  let children = [];
+  arr.forEach((element) => {
+    let values = (Object.values(element));
+    if (values[0] === character){
+      children.push(values[0], values[2]);
+    }
+  });
+  if(children[1].length === 0){
+    return false;
+  }else{
+    return true;
+  }
+});
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
@@ -90,9 +105,22 @@ Write a function named hasChildrenEntries that is similar to your hasChildrenVal
 The input and output of this function are the same as the input and output from challenge 3.
 ------------------------------------------------------------------------------------------------ */
 
-const hasChildrenEntries = (arr, character) => {
-  // Solution code here...
-};
+const hasChildrenEntries = (function(arr, character) {
+  let children = [];
+  arr.forEach((element) => {
+    let values = (Object.entries(element));
+    let name =values[0][1];
+    let childs= values[2][1];
+    if (name === character) {
+      children.push(name, childs);
+      if(children[1].length === 0){
+        return false;
+      }else{
+        return true;
+      }
+    }
+  });
+});
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5
