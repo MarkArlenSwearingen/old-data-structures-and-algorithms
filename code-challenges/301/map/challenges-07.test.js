@@ -131,7 +131,13 @@ const snorlaxAbilities = {
 };
 
 const extractAbilities = (arr) => {
-  // Solution code here...
+  let newArray =Object.values(snorlaxAbilities);
+  let newArrayLength = newArray[0].length;
+  let output = [];
+  for (let i = 0; i < newArrayLength; i++){
+    let name = (newArray[0][i].ability.name);
+    output.push(name);
+  }return output;
 };
 
 /* ------------------------------------------------------------------------------------------------
