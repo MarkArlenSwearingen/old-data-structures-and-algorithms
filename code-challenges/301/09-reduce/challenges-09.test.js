@@ -86,7 +86,10 @@ Note: You must use reduce for this challenge. You may not use the built-in .reve
 ------------------------------------------------------------------------------------------------ */
 
 const reversedString = (arr) => {
-  // Solution code here...
+  let newArr = arr.reduce(function (accumulator, currentValue) {
+    newArr.unshift(currentValue);
+  },0 );
+  return newArr;
 };
 
 /* ------------------------------------------------------------------------------------------------
