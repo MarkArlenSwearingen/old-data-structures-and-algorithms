@@ -24,10 +24,11 @@ For example, ['this is great :)', 'wow', 'whyyyyyy :(', ':)))))'] returns ['this
 ------------------------------------------------------------------------------------------------ */
 
 const findHappiness = (arr) => {
-  // Solution code here... // Solution code here...
-  var regex = /(\:)\)/g;
-  arr.filter((str, index) => {
-    console.log(str.match(regex), index);
+  // Solution code here...
+  return arr.filter((str) => {
+    if(str.includes(':)')){
+      return str;
+    }
   });
 };
 
