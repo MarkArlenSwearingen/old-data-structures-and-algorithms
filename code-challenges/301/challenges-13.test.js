@@ -24,15 +24,11 @@ For example, ['this is great :)', 'wow', 'whyyyyyy :(', ':)))))'] returns ['this
 ------------------------------------------------------------------------------------------------ */
 
 const findHappiness = (arr) => {
-<<<<<<< Updated upstream
-  // Solution code here...
-=======
   // Solution code here... // Solution code here...
   var regex = /(\:)\)/g;
   arr.filter((str, index) => {
     console.log(str.match(regex), index);
   });
->>>>>>> Stashed changes
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -45,18 +41,22 @@ For example, (123) 456-7890 returns 1234567890
 
 const standardizePhoneNumbers = (arr) => {
   // Solution code here...
+  return arr.map(phoneNumber => {
+    return `${phoneNumber.substring(1,4)}${phoneNumber.substring(6,9)}${phoneNumber.substring(10)}`;
+  });
 };
 
-/* ------------------------------------------------------------------------------------------------
-CHALLENGE 4
+//  ------------------------------------------------------------------------------------------------
+// CHALLENGE 4
 
-Write a function named onlyOddChars that takes in a string and returns only the odd-index characters from that string.
+// Write a function named onlyOddChars that takes in a string and returns only the odd-index characters from that string.
 
-For example, 'abcdefg' returns 'bdf'
------------------------------------------------------------------------------------------------- */
+// For example, 'abcdefg' returns 'bdf'
+// ------------------------------------------------------------------------------------------------
 
 const onlyOddChars = (str) => {
   // Solution code here...
+  return str.split('').filter((char, index) => index % 2 !== 0).join('');
 };
 
 /* ------------------------------------------------------------------------------------------------
