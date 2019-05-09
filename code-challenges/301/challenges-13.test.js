@@ -24,7 +24,15 @@ For example, ['this is great :)', 'wow', 'whyyyyyy :(', ':)))))'] returns ['this
 ------------------------------------------------------------------------------------------------ */
 
 const findHappiness = (arr) => {
+<<<<<<< Updated upstream
   // Solution code here...
+=======
+  // Solution code here... // Solution code here...
+  var regex = /(\:)\)/g;
+  arr.filter((str, index) => {
+    console.log(str.match(regex), index);
+  });
+>>>>>>> Stashed changes
 };
 
 /* ------------------------------------------------------------------------------------------------
