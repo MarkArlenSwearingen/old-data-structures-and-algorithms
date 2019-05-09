@@ -67,7 +67,10 @@ Write a function named allHappy that takes in an array of strings and returns a 
 ------------------------------------------------------------------------------------------------ */
 
 const allHappy = (arr) => {
-  // Solution code here...
+  // Solution code here... returns array of T/F needs to be reduced to a single answer.
+  return arr.map((str) => {
+    return (str.includes(':)'));
+  });
 };
 
 /* ------------------------------------------------------------------------------------------------
