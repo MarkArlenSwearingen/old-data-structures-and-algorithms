@@ -88,11 +88,10 @@ let starWarsData = [{
 
 let biggerThanLuke = (arr) => {
   // Solution code here...
-  return starWarsData.filter(mass => {
-    if(mass.mass > 77){
-      return mass.mass
-    }
-  });
+  let bigChar = arr.filter(star => star.mass > 77);
+  return bigChar.map((newName) =>{
+    return newName.name;
+  }).join(' - ');
 };
 
 /* ------------------------------------------------------------------------------------------------
